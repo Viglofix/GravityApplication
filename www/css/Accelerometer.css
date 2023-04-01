@@ -1,0 +1,10 @@
+.flexWrapperAccelerometer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.flexWrapperAccelerometerItems {
+    font-size: 32px;
+    color: whitesmoke;
+}

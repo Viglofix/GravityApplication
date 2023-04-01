@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    background-color: rgb(19, 18, 18);
+}
+header {
+    background-color: rgb(56, 56, 56);
+    padding: 0 15px;
+}
+
+/* sensor */
+.error-message {
+    font-size: 50px;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+.menu, .submenu {
+    list-style-type: none;  
+}
+.logo {
+    width: 50%;
+    font-size: 20px;
+    justify-self: flex-start;
+}
+.item {
+    width: 30%;
+    padding: 10px;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #7fffd4;
+}
+
+/* PC version */
+
+@media screen and (min-width: 769px) {
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+}
+.toggle {
+    position: absolute;
+    display: none;
+}
+.item.button {
+    position: relative;
+    left: 80px;
+}
+.submenu {
+    display: none;
+}
+.submenu-active .submenu {
+   display: block;
+   text-align: center;
+   margin: 10px;
+}
+.has-submenu > a::after {
+    font-family: "Font Awesome 5 Free";
+    color: #7fffd4;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900; 
+    content: "\f078";
+    color: white;
+    padding-left: 5px;
+}
+.subItem {
+    list-style: georgian;
+    padding: 10px 15px;
+}
+.submenu-active {
+    background-color: gray;
+    border-radius: 3px;
+}
+
+}
+
+
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu li a {
+        display: block;
+        padding: 15px 5px;
+    }
+    .menu li.subItem a {
+    }
+    .toggle {
+        order: 1;
+        font-size: 20px;
+    }
+    .item.button {
+        order: 2;
+    }
+    /* turn off */
+    .item {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+    /* turn on */
+    .active .item {
+        display: block;
+    }
+
+    /* submenu styling */
+
+    .submenu {
+        display: none;
+    }
+    .submenu-active .submenu {
+       display: block;
+    }
+
+    .has-submenu i {
+        font-size: 12px;
+    }
+    .has-submenu > a::after {
+        font-family: "Font Awesome 5 Free";
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 900; 
+        content: "\f078";
+        color: white;
+        padding-left: 5px;
+    }
+    .subItem a {
+        padding: 10px 15px;
+    }
+    .submenu-active {
+        background-color: gray;
+        border-radius: 3px;
+    }
+}
+
+@media screen and (max-width: 319px) {
+      /* turn on */
+      .active .item {
+        display: block;
+    }
+    .item {
+        display: none;
+    }
+}
